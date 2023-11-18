@@ -24,6 +24,7 @@ import { v4 as uuidv4 } from "uuid";
 import BlockRepository from "../../api/repositories/block-repository";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Block } from "@/app/types/block.types";
+import DB from "@/app/utils/db";
 
 export default function AddBlock() {
   const [custom, setCustom] = useState(false);
@@ -52,6 +53,7 @@ export default function AddBlock() {
         ...(_protected && { apiKey }),
         blockName,
         isProtected: _protected,
+        userIdentity: DB.retrieveData("UUID"),
       });
     } catch (error) {
       console.log(error);

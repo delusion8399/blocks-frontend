@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import {
   Box,
   Container,
@@ -13,8 +14,17 @@ import Image from "next/image";
 import box from "../components/assets/box.svg";
 import AddBlock from "./components/add-block";
 import BlocksGrid from "./components/blocks-grid";
+import { v4 } from "uuid";
+import DB from "../utils/db";
 
 export default async function Dashboard() {
+  useEffect(() => {
+    if (DB.retrieveData("UUID")) {
+    } else {
+      DB.storeData("UUID", v4());
+    }
+  }, []);
+
   return (
     <>
       <Tabs colorScheme="gray">

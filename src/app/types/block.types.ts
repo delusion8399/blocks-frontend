@@ -3,5 +3,6 @@ export type Block = {
   blockName: string;
   isProtected: boolean;
   apiKey?: string;
+  userIdentity: string;
   createdAt?: string | undefined;
 };
