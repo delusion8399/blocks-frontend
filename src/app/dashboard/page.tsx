@@ -35,20 +35,27 @@ export default async function Dashboard() {
         </TabList>
 
         <TabPanels>
-          <TabPanel>
+          <TabPanel px={{ base: 4, md: 6 }}>
             <Container maxWidth={"container.lg"}>
               <Box
                 display="flex"
                 flexDirection="column"
                 alignItems="center"
                 justifyContent="center"
-                gap={10}
+                gap={{ base: 6, md: 10 }}
+                py={{ base: 4, md: 6 }}
               >
-                <Image src={box} alt="block" height={100} width={100} />
+                <Image
+                  src={box}
+                  alt="block"
+                  height={80}
+                  width={80}
+                  className="sm:h-[100px] sm:w-[100px]"
+                />
                 <AddBlock />
               </Box>
 
-              <Divider size="lg" marginBlock={10} />
+              <Divider size="lg" marginBlock={{ base: 6, md: 10 }} />
 
               <BlocksGrid />
             </Container>

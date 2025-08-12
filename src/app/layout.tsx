@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Blocks",
   description: "A HTTP Based JSON Storage Service",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({

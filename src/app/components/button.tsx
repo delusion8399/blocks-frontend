@@ -15,11 +15,11 @@ export default function Button({
     <button
       className={`${
         size === "large"
-          ? "px-8 py-3"
+          ? "px-6 py-2 sm:px-8 sm:py-3 text-sm sm:text-base"
           : size === "small"
-          ? "px-4 py-2"
-          : "px-4 py-2"
-      } border dark:text-white dark:bg-black`}
+          ? "px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm"
+          : "px-4 py-2 text-sm sm:text-base"
+      } border dark:text-white dark:bg-black hover:bg-black hover:text-white transition-colors rounded-lg w-full sm:w-auto`}
       onClick={onClick}
     >
       {name}

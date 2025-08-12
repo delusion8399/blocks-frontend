@@ -29,9 +29,9 @@ export default function BlocksGrid() {
         </div>
       ) : (
         <SimpleGrid
-          columns={4}
-          templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
-          spacing={20}
+          columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
+          templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
+          spacing={{ base: 4, md: 6, lg: 8 }}
         >
           {data?.map((block: Block, idx: number) => {
             return (

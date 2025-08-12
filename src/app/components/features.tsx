@@ -48,17 +48,17 @@ const features = [
 
 function FeatureCard({ Icon, title, description }: FeatureCard) {
   return (
-    <div className="border hover:shadow-lg py-6 px-3 flex justify-center flex-col items-center rounded-lg">
-      <Icon size={50} className="mt-3" />
-      <p className="font-bold my-3">{title}</p>
-      <p className="text-sm text-gray-500">{description}</p>
+    <div className="border hover:shadow-lg py-6 px-3 flex justify-center flex-col items-center rounded-lg transition-shadow">
+      <Icon size={40} className="mt-3 sm:size-[50px]" />
+      <p className="font-bold my-3 text-center">{title}</p>
+      <p className="text-sm text-gray-500 text-center">{description}</p>
     </div>
   );
 }
 
 export default function Features() {
   return (
-    <div className="grid grid-cols-3 gap-10 container max-w-4xl mx-auto bg-white">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 container max-w-4xl mx-auto bg-white px-4">
       {features.map((feature, idx) => {
         return (
           <FeatureCard

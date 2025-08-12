@@ -89,10 +89,13 @@ export default function Block({
 
         <TabPanels>
           <TabPanel></TabPanel>
-          <TabPanel>
+          <TabPanel px={{ base: 4, md: 6 }}>
             <Container maxWidth={"container.lg"}>
-              <Box marginBlock={10}>
-                <Text fontSize={"3xl"} fontWeight={"semibold"}>
+              <Box marginBlock={{ base: 6, md: 10 }}>
+                <Text
+                  fontSize={{ base: "2xl", md: "3xl" }}
+                  fontWeight={"semibold"}
+                >
                   Playground
                 </Text>
               </Box>
@@ -110,8 +113,16 @@ export default function Block({
                     </Text>
                     <Divider marginBlock="5" />
 
-                    <Box display={"flex"} alignItems={"center"} gap={2}>
-                      <Box flex={0.25}>
+                    <Box
+                      display={"flex"}
+                      flexDirection={{ base: "column", md: "row" }}
+                      alignItems={{ base: "stretch", md: "center" }}
+                      gap={{ base: 4, md: 2 }}
+                    >
+                      <Box
+                        flex={{ base: "none", md: 0.25 }}
+                        minW={{ base: "auto", md: "120px" }}
+                      >
                         <Select
                           variant="filled"
                           value={method}
@@ -127,9 +138,13 @@ export default function Block({
                           <option value="DELETE">DELETE</option>
                         </Select>
                       </Box>
-                      <Box flex={0.75}>
+                      <Box flex={{ base: "none", md: 0.75 }}>
                         <InputGroup size="md">
-                          <InputLeftAddon children="blocks.com/" />
+                          <InputLeftAddon
+                            children="blocks.com/"
+                            fontSize={{ base: "xs", md: "sm" }}
+                            px={{ base: 2, md: 3 }}
+                          />
                           <Input value={endPoint} />
                         </InputGroup>
                       </Box>
